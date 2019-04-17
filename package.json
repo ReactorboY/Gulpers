@@ -1,0 +1,19 @@
+{
+  "name": "@reactorboy/tiny",
+  "version": "1.0.0",
+  "description": "just a simple node module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReactorboY/Tiny.git"
+  },
+  "author": "Reactorboy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ReactorboY/Tiny/issues"
+  },
+  "homepage": "https://github.com/ReactorboY/Tiny#readme"
+}
