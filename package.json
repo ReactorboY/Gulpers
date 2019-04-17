@@ -1,5 +1,5 @@
 {
-  "name": "@reactorboy/tiny",
+  "name": "gulpers",
   "version": "1.0.0",
   "description": "just a simple node module",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ReactorboY/Tiny.git"
+    "url": "git+https://github.com/ReactorboY/Gulpers.git"
   },
   "author": "Reactorboy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ReactorboY/Tiny/issues"
+    "url": "https://github.com/ReactorboY/Gulpers/issues"
   },
-  "homepage": "https://github.com/ReactorboY/Tiny#readme"
+  "homepage": "https://github.com/ReactorboY/Gulpers#readme"
 }
