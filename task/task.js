@@ -1,9 +1,10 @@
 const fs = require('fs');
 
 const filePath = process.cwd();
+
 //  tasks
 const tasks = [{
-        id: 'sass',
+        id: 'sassi',
         name: 'sass',
         moduleName: 'gulp-sass'
     },
@@ -14,18 +15,33 @@ const tasks = [{
     }
 ];
 
-const task = () => {
-    const gulping = `const gulp = require('gulp');\n`;
-
-    fs.writeFile(`${filePath}/gulpfile.js`, gulping,(err) => {
-        if (err) throw err;
-        console.log('Your gulpfile is created');
-    })
-
-    return addModules();
+const folders = {
+    src: 'src/',
+    build: 'public/'
 }
 
-// create modules
+const gulping = `const gulp = require('gulp');\n`;
+
+// checkFile module
+const checkFile = () => {
+    fs.access(filePath+'/gulpfile.js', fs.F_OK, (err) =>{
+        if (err) {
+            fs.writeFile(`${filePath}/gulpfile.js`, gulping, (err) => {
+                if (err) throw err;
+                console.log('Your gulpfile is created');
+                return addModules();
+            })
+        }
+        else {
+            if(fs.statSync(filePath+'/gulpfile.js').size > 0){
+                console.log('Already data is present');
+                return writeTest();
+            }
+            else addModules();
+        }
+    })
+}
+
 
 const createModules = () => {
     let modules = [];
@@ -44,9 +60,37 @@ const addModules = () => {
 }
 
 const writeTest = () => {
-    return true;
+    fs.readFile(filePath+'/gulpfile.js','UTF-8',(err, data) => {
+        if (err) throw err;
+        return processFile(data);
+    })
+}
+
+const mySass = {
+    name:tasks[0].name,
+    content: 
+    `
+    gulp.task(\`${tasks[0].id}\`, () => {
+       return gulp.src(\`${folders.src}\`+ 'sass/main.scss') 
+        .pipe(sass({
+            outputStyle:'nested',
+            precision:3,
+            errLogToConsole: true
+        }))
+        .pipe(gulp.dest(\`${folders.build}\`+ 'css/'))
+    })
+    `
+}
+    
+
+const processFile = (data) => {
+    if (!data.match(mySass.name)){
+        console.log('Task is Already present');
+        return fs.appendFile(filePath+'/gulpfile.js', mySass.content, err => {if (err) throw err})
+    }
+    // console.log('Great Work');
 }
 
 module.exports = {
-    task
+    checkFile
 };
