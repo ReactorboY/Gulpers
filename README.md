@@ -5,8 +5,8 @@ Gulpers is a automatic task runner initiatot to be used for doing the compilatio
 
 ### Sass Automatic Compilation  
 
-Compile Sass -> main.css   
-Autoprefix css fall-behind property upto 2 previous browsers
+1. Compile Sass -> main.css   
+2. Autoprefix css fall-behind property upto 2 previous browsers
 
 ## How to use
 
