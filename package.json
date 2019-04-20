@@ -1,6 +1,6 @@
 {
   "name": "gulpers",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "just a simple node module",
   "main": "index.js",
   "scripts": {
