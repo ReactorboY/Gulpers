@@ -17,5 +17,6 @@
   },
   "homepage": "https://github.com/ReactorboY/Gulpers#readme",
   "dependencies": {
+    "shelljs": "^0.8.3"
   }
 }
