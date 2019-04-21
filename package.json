@@ -17,8 +17,5 @@
   },
   "homepage": "https://github.com/ReactorboY/Gulpers#readme",
   "dependencies": {
-    "gulp": "^4.0.0",
-    "gulp-sass": "^4.0.2",
-    "node-sass": "^4.11.0"
   }
 }
